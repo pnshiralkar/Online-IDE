@@ -1,1 +1,1 @@
-# cpp-ide-in-node.js
+# C++ IDE in Node.js
