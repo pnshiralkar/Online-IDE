@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <title>C++ Compiler in Node.js</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="assets/onlinegdb.css"/>
+    <link rel="stylesheet" href="assets/style.css"/>
+
+
+    <script>  var main_ide = true;  </script>
+
+
+    <script type="text/javascript" src="assets/jq.js"></script>
+    <script type="text/javascript" src="assets/ace.js"></script>
+    <script type="text/javascript" src="assets/ext-language_tools.js"></script>
+    <script type="text/javascript" src="assets/editor.js" defer></script>
+    <script type="text/javascript" src="assets/main.js" defer></script>
+    <script type="text/javascript" src="assets/action.js"></script>
+
+
+
+
+    <style type="text/css">
+        
+    </style>
+</head>
+
+<body>
+<form method="post" action="/save" id="frm_save" target="_blank"><input type="hidden" id="inp_save" name="code"/>
+<button id="save" class="btn btn-primary border-white" style="position: fixed; bottom: 21.4vh;right: 1.4vh; z-index: 1; font-size: larger"><b>Save</b></button>
+</form>
+<button id="btn_inp" class="btn btn-success border-white" style="position: fixed; bottom: 21.4vh;right: 11vh; z-index: 1; font-size: larger"><b>Run</b></button>
+<span id="mobile_test_element"></span>
+<div class="container" style="width:100%;padding:0px;margin:0px">
+
+    <div class="col-sm-12" style="margin:0px;padding:0px">
+        <div style="height:100vh">
+            <div class="split-pane fixed-left">
+
+                <div class="split-pane-divider hide" id="my-divider"></div>
+                <div class="split-pane-component" id="right-component">
+
+
+                    <input type="hidden" id="snippet_id" value="">
+
+                    <div class="split-pane fixed-left">
+                        <div class="split-pane-component" id="right-left-component">
+                            <div id="top-component">
+
+                                <div id="editor-container">
+
+
+                                    <div id="multi_editor_container">
+
+
+                                        <div id="editor_1" class="tab-pane active editor"
+                                             style="position: absolute;width:100%;top:0">
+/******************************************************************************
+    C++ Compiler in Node.js
+    A project by Prathamesh Shiralkar.
+*******************************************************************************/
+
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    cout&lt;&lt;&quot;Hello World&quot;;
+
+    return 0;
+}
+</div>
+
+                                    </div>
+                                </div>
+                                <!-- middle top end -->
+                            </div>
+                            <div class="split-pane-component" id="bottom-component" style="height: 20vh; padding: 8px; background-color: black;color: white;overflow-y: scroll">
+                                Output :
+                                <pre style="background-color: #000000;display:none;" id="pre_err">
+                                <div id="errors" style=" font-family: monospace;width: 100%;margin: 5px;color: red">
+
+                                </div></pre>
+                                <pre style="background-color: #000000;display:none" id="pre_op">
+                                <div id="outputs" style=" font-family: monospace;width: 100%;margin: 5px;color: #ffffff">
+
+                                </div></pre>
+                            </div>
+
+                            <script>
+
+
+
+                            </script>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup_contents">
+        <div class="popup_title">
+        <button type="button" class="close" aria-label="Close" id="popup_close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            <h1>Input:</h1>
+        </div>
+        <div class="popup_cont">
+            <textarea class="inp" id="inp"></textarea>
+            <button id="btn_run" class="btn btn-success border-white" style="position: relative;margin: 4vh;float: right; z-index: 1; font-size: larger"><b>Run</b></button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
