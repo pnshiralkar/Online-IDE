@@ -1,5 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var uniqid = require('uniqid');
+var rimraf = require("rimraf");
+const ps = require('python-shell')
 
 var app = express();
 app.set('view engine', 'ejs');
@@ -19,17 +22,23 @@ app.post('/save', function(req, res){
 
 app.post('/run/', function(req, res)
 {
+    var id = uniqid();
+    console.log(id);
     var fs = require('fs');
-    var writestream = fs.createWriteStream("./codes/code.cpp");
+
+    fs.mkdirSync("./codes/" + id);
+
+    var writestream = fs.createWriteStream("./codes/" + id + "/code.cpp");
     writestream.write(req.body.code);
 
-    writestream = fs.createWriteStream("./codes/inp.txt");
+    writestream = fs.createWriteStream("./codes/" + id + "/inp.txt");
     writestream.write(req.body.input);
 
+
     const ps = require('python-shell')
-ps.PythonShell.run('codes/cpp.py', null, function (err, results) {
+ps.PythonShell.run('codes/cpp.py', {args: [id]}, function (err, results) {
     var errors="";
-    var readStream = fs.createReadStream("./codes/out.txt", 'utf8');
+    var readStream = fs.createReadStream("./codes/" + id + "/out.txt", 'utf8');
     err = results;
     results = "";
     readStream.on('data', function(data){results += data;});
@@ -41,12 +50,12 @@ ps.PythonShell.run('codes/cpp.py', null, function (err, results) {
             results
         };
 
+        rimraf.sync("./codes/" + id);
+
         res.end(JSON.stringify(obj));
     });
   
 });
-
-    //shell.exec("cd codes/\npython code.py>out.txt\ncd ../");
 });
 
 
