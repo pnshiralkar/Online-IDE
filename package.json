@@ -1,0 +1,20 @@
+{
+  "name": "cppide",
+  "version": "1.0.0",
+  "description": "Code, comple and Run C++ code ",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "python-shell": "^1.0.7",
+    "shelljs": "^0.8.3"
+    //python3 also reqd
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prathamesh Shiralkar",
+  "license": "ISC"
+}
