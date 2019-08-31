@@ -17,10 +17,16 @@ Clone this Repo and extract it to a folder. Make sure you have latest version of
  <li>Install g++ - <code>sudo apt-get install g++</code></li>
  <li>Install Java Compiler - <code>sudo apt install default-jdk</code></li>
  <li>Install Python3 - <code>sudo apt-get install python3</code></li>
+ <li>Clone this Repo into desired folder (directly download & ectract zip OR <br/><code>git clone https://github.com/pnshiralkar/Online-IDE.git</code></li>
+ <li>Change directory (cd) into the cloned folder</li>
+ <li>The IDE Server is now installed and setup. </li>
 </ol>
-Open in terminal the folder in which repo is cloned and run - <br/>
-<code>node cppide.js</code> OR <code>node .</code><br/>
-This will start the IDE server at <code><your_ip>:8080</code> (and, also) <code>127.0.0.1:8080</code>.You can check if this link works in browser.<br/>
+<br>
+
+# Run the server - 
+<code>node cppide.js</code> OR <code>node .</code>
+<br/>
+This will start the IDE server at <code> <your_ip>:8080</code> (and, also) <code>127.0.0.1:8080</code>.You can check if this link works in browser.<br/>
 Happy Coding!
  
  # Technologies used
