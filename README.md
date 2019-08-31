@@ -17,7 +17,7 @@ Clone this Repo and extract it to a folder. Make sure you have latest version of
  <li>Install g++ - <code>sudo apt-get install g++</code></li>
  <li>Install Java Compiler - <code>sudo apt install default-jdk</code></li>
  <li>Install Python3 - <code>sudo apt-get install python3</code></li>
- <li>Clone this Repo into desired folder (directly download & ectract zip OR <br/><code>git clone https://github.com/pnshiralkar/Online-IDE.git</code></li>
+ <li>Clone this Repo into desired folder (directly download & extract zip OR <br/><code>git clone https://github.com/pnshiralkar/Online-IDE.git</code></li>
  <li>Change directory (cd) into the cloned folder</li>
  <li>The IDE Server is now installed and setup. </li>
 </ol>
