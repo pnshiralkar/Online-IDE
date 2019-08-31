@@ -26,8 +26,11 @@ Clone this Repo and extract it to a folder. Make sure you have latest version of
 # Run the server - 
 <code>node cppide.js</code> OR <code>node .</code>
 <br/>
-This will start the IDE server at <code> <your_ip>:8080</code> (and, also) <code>127.0.0.1:8080</code>.You can check if this link works in browser.<br/>
+This will start the IDE server at <code>127.0.0.1:8080</code>.
+<br/>To run the server on specific IP address, pass <your_ip>:<port_no> as argument . For e.g. - <code> node . 192.168.1.1:8888 </code> OR <code> node cppide 192.168.1.1:8888 </code> .<br/>
+You can check if this link works in browser.<br/>
 Happy Coding!
  
  # Technologies used
  Node.js, Python, HTML, CSS, Javascript, jQuery, Bootstrap, Bash.
+

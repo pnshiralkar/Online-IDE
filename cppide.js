@@ -60,4 +60,15 @@ app.post('/run/', function(req, res)
 });
 
 
-app.listen(8080);
+if(typeof process.argv.slice(1)[1] == "undefined")
+{
+	var port = 8888;
+	var ip = '127.0.0.1';
+}else
+{
+	var ip = process.argv.slice(1)[1].split(":")[0];
+	var port = process.argv.slice(1)[1].split(":")[1];
+}
+
+
+app.listen(port, ip, ()=>{console.log("Listening on " + ip + ":" + port)});
