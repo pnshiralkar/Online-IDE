@@ -1,20 +1,36 @@
 {
   "name": "cppide",
-  "version": "1.0.0",
-  "description": "Code, comple and Run C++ code ",
-  "main": "app.js",
+  "version": "1.2.0",
+  "description": "C++ IDE in Node.js",
+  "main": "cppide.js",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "nodemon": "^1.18.10",
-    "python-shell": "^1.0.7",
-    "shelljs": "^0.8.3"
-    //python3 also reqd
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "mongodb": "^2.1.16",
+    "morgan": "^1.7.0",
+    "object-assign": "4.1.0",
+    "python-shell": "1.0.7",
+    "rimraf": "^3.0.0",
+    "uniqid": "^5.0.3"
   },
-  "devDependencies": {},
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node cppide.js"
   },
-  "author": "Prathamesh Shiralkar",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnshiralkar/CPP-IDE.git"
+  },
+  "author": "Pratham Shiralkar <pnsusblock@gmail.com>",
+  "license": "CC-BY-1.0",
+  "bugs": {
+    "url": "https://github.com/pnshiralkar/CPP-IDE/issues"
+  },
+  "homepage": "https://github.com/pnshiralkar/CPP-IDE"
 }

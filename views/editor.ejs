@@ -1,20 +1,37 @@
 <!doctype html>
 <html>
 <head>
-    <title>C++ Compiler in Node.js</title>
+    <title>Online IDE in Node.js by Prathamesh Shiralkar.</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
 
     <link rel="stylesheet" href="assets/onlinegdb.css"/>
+	<link rel="stylesheet" href="assets/bootstrap.min.css"/>
     <link rel="stylesheet" href="assets/style.css"/>
 
 
     <script>  var main_ide = true;  </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="assets/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#000000">
 
 
     <script type="text/javascript" src="assets/jq.js"></script>
@@ -28,15 +45,28 @@
 
 
     <style type="text/css">
+        .ace_gutter{
+        .ace_gutter {
+}
+        }
         
+        pre{
+        	overflow-x: hidden;
+        	font-size: 100%;
+        }
     </style>
 </head>
 
 <body>
-<form method="post" action="/save" id="frm_save" target="_blank"><input type="hidden" id="inp_save" name="code"/>
-<button id="save" class="btn btn-primary border-white" style="position: fixed; bottom: 21.4vh;right: 1.4vh; z-index: 1; font-size: larger"><b>Save</b></button>
-</form>
-<button id="btn_inp" class="btn btn-success border-white" style="position: fixed; bottom: 21.4vh;right: 11vh; z-index: 1; font-size: larger"><b>Run</b></button>
+<div style="position: fixed; bottom: 21.4vh;right: 0; z-index: 1; font-size: larger; background: #000; padding: 5px 6px; color: white; font-size: larger; border-radius: 11px 0 0 11px">
+<button id="btn_inp" class="btn btn-success border-white" style="bottom: 21.4vh;right: 28vh; z-index: 1; font-size: larger; display: inline-block; border-radius: 5px"><b>Run</b></button>
+<b style="margin: 0 3px 0 13px">Language : </b>
+<select class="form-control" id="selLang" style="width: 9rem; display: inline-block; right: 0">
+        <option value="cpp">C/C++</option>
+        <option value="java">Java</option>
+        <option value="python">Python</option>
+      </select>
+</div>
 <span id="mobile_test_element"></span>
 <div class="container" style="width:100%;padding:0px;margin:0px">
 
@@ -44,7 +74,7 @@
         <div style="height:100vh">
             <div class="split-pane fixed-left">
 
-                <div class="split-pane-divider hide" id="my-divider"></div>
+                
                 <div class="split-pane-component" id="right-component">
 
 
@@ -61,7 +91,20 @@
 
 
                                         <div id="editor_1" class="tab-pane active editor"
-                                             style="position: absolute;width:100%;top:0"><%= temp %>
+                                             style="position: absolute;width:100%;top:0;background-color: #1e1e1e;">/******************************************************************************
+    C++ IDE in Node.js
+    A project by Prathamesh Shiralkar.
+*******************************************************************************/
+
+#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int main()
+{
+    cout &lt;&lt; &quot;Hello Coders!!!&quot;;
+    return 0;
+}
 </div>
 
                                     </div>
@@ -74,8 +117,8 @@
                                 <div id="errors" style=" font-family: monospace;width: 100%;margin: 5px;color: red">
 
                                 </div></pre>
-                                <pre style="background-color: #000000;display:none" id="pre_op">
-                                <div id="outputs" style=" font-family: monospace;width: 100%;margin: 5px;color: #ffffff">
+                                <pre style="background-color: #000000;display:none;overflow-x: none" id="pre_op">
+                                <div id="outputs" style=" font-family: monospace;width: 100%;margin: 5px;color: #ffffff;min-height: 8vh; overflow-x: auto;">
 
                                 </div></pre>
                             </div>

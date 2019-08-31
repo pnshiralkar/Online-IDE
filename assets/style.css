@@ -4,6 +4,10 @@ html, body {
             margin: 0;
             padding: 0;
         }
+        
+        .ace-idle-fingers {
+    background-color: #1e1e1e;
+    }
 
         pre{
             background-color: #000000;

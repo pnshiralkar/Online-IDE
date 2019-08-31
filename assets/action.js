@@ -1,4 +1,54 @@
+var lang = "cpp";
+
+
+var tempjava = "/* \nMultiLanguage IDE in Node.js by Prathamesh Shiralkar.\nHappy coding!!! \n*/\n\n// Please use class name as 'code' - do NOT change this\n\nclass code{\n    public static void main(String args[]){\n    	//Your code goes here\n	    System.out.println(\"Hello Java\");\n    }\n}";
+
+var temppy = "'''\nMultiLanguage IDE in Node.js by Prathamesh Shiralkar.\nHappy coding!!!\n'''\n\nprint(\"Hello Coders!\")";
+
+var tempcpp = "/* \nMultiLanguage IDE in Node.js by Prathamesh Shiralkar.\nHappy coding!!!\n*/\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\nint main()\n{\n    cout << \"Hello Coders!!!\";\n    return 0;\n}";
+
+
+
+function langch(l)
+{
+    var editorobj = ace.edit("editor_1");
+    
+	if(lang==="java")
+		tempjava = editorobj.getValue();
+	if(lang==="py")
+		temppy = editorobj.getValue();
+	if(lang==="cpp")
+		tempcpp = editorobj.getValue();
+
+    var editor = $("#multi_editor_container").editor();
+    if(l=="python")
+    	lang="py";
+    else
+	    lang = l;
+    editor.setModeForLang(l);
+    if(lang==="java")
+		editorobj.setValue(tempjava, -1);
+	if(lang==="py")
+		editorobj.setValue(temppy, -1);
+	if(lang==="cpp")
+		editorobj.setValue(tempcpp, -1);
+    editor.addEventListener('breakpoint_set', function (e) { 
+        var bp = e.breakpoint;
+        ide.setBreakpoint(bp);
+    });
+    editor.addEventListener('breakpoint_unset', function (e) { 
+        var bp = e.breakpoint;
+        ide.clearBreakpoint(bp);
+    });
+}
+
+
 $(document).ready(function () {
+ace.edit("editor_1").setValue(tempcpp, -1);
+
+	$("#selLang").change(function(){
+		langch($(this).val());
+	});
 
     $('#btn_inp').click(function(){
         $('#popup').attr("class", "popup_show");
@@ -20,7 +70,7 @@ $(document).ready(function () {
         var code = editor.getValue();
         //console.log(code);
         //editor.setValue("//Template//");
-        $.post("/run/", {"code" : code, "input": $('#inp').val()}, function (data) {
+        $.post("/run/", {"code" : code, "input": $('#inp').val(), "lang": lang}, function (data) {
             console.log(data);
             var op;
             try{op = JSON.parse(data);
