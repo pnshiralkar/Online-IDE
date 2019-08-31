@@ -51,7 +51,7 @@ app.post('/run/', function(req, res)
             results
         };
 
-        rimraf.sync("./codes/" + id);
+        //rimraf.sync("./codes/" + id);
 
         res.end(JSON.stringify(obj));
     });

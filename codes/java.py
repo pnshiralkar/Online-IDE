@@ -12,7 +12,11 @@ if(f.read() == ""):
     try:
         proc = subprocess.run(["java", "-cp", "codes/" + dir, "code"], timeout=3, input=inp.encode('utf-8'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         op = open("./codes/" + dir + "/out.txt", "w")
-        op.write(str(proc.stdout.decode()))
+        if(str(proc.stderr.decode()) == ""):
+	        op.write(str(proc.stdout.decode()))
+        else:
+	        op.write(str(proc.stderr.decode()))
+	        print(".")
     except subprocess.TimeoutExpired:
         op = open("./codes/" + dir + "/out.txt", "w")
         op.write("Process terminated due to Timeout (3s)")
