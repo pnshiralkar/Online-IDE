@@ -1,11 +1,11 @@
 var lang = "cpp";
 
 
-var tempjava = "/* \nMultiLanguage IDE in Node.js by Prathamesh Shiralkar.\nHappy coding!!! \n*/\n\n// Please use class name as 'code' - do NOT change this\n\nclass code{\n    public static void main(String args[]){\n    	//Your code goes here\n	    System.out.println(\"Hello Java\");\n    }\n}";
+var tempjava = "/* \nMultiLanguage IDE in Node.js\nHappy coding!!! \n*/\n\n// Please use class name as 'code' - do NOT change this\n\nclass code{\n    public static void main(String args[]){\n    	//Your code goes here\n	    System.out.println(\"Hello Java\");\n    }\n}";
 
-var temppy = "'''\nMultiLanguage IDE in Node.js by Prathamesh Shiralkar.\nHappy coding!!!\n'''\n\nprint(\"Hello Coders!\")";
+var temppy = "'''\nMultiLanguage IDE in Node.js\nHappy coding!!!\n'''\n\nprint(\"Hello Coders!\")";
 
-var tempcpp = "/* \nMultiLanguage IDE in Node.js by Prathamesh Shiralkar.\nHappy coding!!!\n*/\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\nint main()\n{\n    cout << \"Hello Coders!!!\";\n    return 0;\n}";
+var tempcpp = "/* \nMultiLanguage IDE in Node.js\nHappy coding!!!\n*/\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\nint main()\n{\n    cout << \"Hello Coders!!!\";\n    return 0;\n}";
 
 
 
